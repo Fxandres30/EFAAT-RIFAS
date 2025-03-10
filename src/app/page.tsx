@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import { useState } from "react";
 
 const LandingPage = () => {
@@ -27,8 +30,8 @@ const LandingPage = () => {
       </div>
 
       {/* Imagen del premio */}
-      <img src="/premio.jpg" alt="Premio del sorteo" className="w-96 mt-6 rounded-lg shadow-lg" />
-
+      <Image src="/imagen/logo.png" alt="Logo de EFAAT" className="w-96 mt-6 rounded-lg shadow-lg" />
+    
       {/* Botón de información */}
       <button
         onClick={() => setShowInfoModal(true)}
