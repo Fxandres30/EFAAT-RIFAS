@@ -1,18 +1,18 @@
-"use client";
 import { useState } from "react";
-import { InfoModal } from "./components/Modals"; // Asegúrate de que este archivo existe
-import VerifyModal from "./components/Modals"; // Asegúrate de que este archivo existe
 
 const LandingPage = () => {
+  // Estado para modales
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
 
-  const [ticketCount, setTicketCount] = useState(5);
-  const ticketPrice = 10;
-  const totalPrice = ticketCount * ticketPrice;
+  // Estado de boletos
+  const [ticketCount, setTicketCount] = useState(5); // Inicial en 5
+  const ticketPrice = 10; // Precio unitario
+  const totalPrice = ticketCount * ticketPrice; // Precio total
 
-  const totalTickets = 9999;
-  const soldTickets = 400;
+  // Simulación de barra de progreso
+  const totalTickets = 1000;
+  const soldTickets = 400; // Debería venir de la BD
   const progress = (soldTickets / totalTickets) * 100;
 
   return (
@@ -60,9 +60,6 @@ const LandingPage = () => {
           </div>
         ))}
       </div>
-      
-      <InfoModal show={showInfoModal} onClose={() => setShowInfoModal(false)} />
-      <VerifyModal isOpen={showVerifyModal} onClose={() => setShowVerifyModal(false)} />
 
       {/* Botones para sumar y restar */}
       <div className="flex items-center mt-4">
@@ -111,9 +108,8 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
-      )} 
-      
-      
+      )}
+
       {/* Modal de verificación de boletos */}
       {showVerifyModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -139,3 +135,6 @@ const LandingPage = () => {
     </div>
   );
 };
+
+export default LandingPage;
+
